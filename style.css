@@ -1,0 +1,31 @@
+body{
+    text-align: center;
+}
+
+#game-board{
+    display: grid;
+    width: 1358px;
+    height: 578px;
+    margin: auto;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #E5FEF6;
+    gap: 5px;
+}
+
+.grid{
+    margin: auto;
+    padding: 20px;
+    background-color: #119F9F;
+    width: 136px;
+    height: 200px;
+}
+
+button{
+    float: left;
+    margin-top: 30px;
+    width: 200px;
+    height: 55px;
+    border: 1px solid color:#119F9F;
+    border-radius: 30px;
+    background-color: #119F9F;
+}
