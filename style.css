@@ -2,30 +2,49 @@ body{
     text-align: center;
 }
 
-#game-board{
-    display: grid;
-    width: 1358px;
-    height: 578px;
-    margin: auto;
-    grid-template-columns: repeat(5, 1fr);
-    background-color: #E5FEF6;
-    gap: 5px;
+section {
+    max-width: 1500px;
+    margin-inline: auto;
 }
 
-.grid{
+h1 {
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#game-board{
+    display: grid;
+    min-height: 578px;
+    margin-inline: auto;
+    grid-template-columns: repeat(5, 1fr);
+    padding-inline: 40px;
+    padding-block: 30px;
+    background-color: #DECC8A;
+    border-radius: 10px;
+}
+
+.card{
+    border-radius: 10px;
     margin: auto;
     padding: 20px;
-    background-color: #119F9F;
+    background-color: #C83C00;
     width: 136px;
-    height: 200px;
+    min-height: 200px;
 }
 
 button{
     float: left;
-    margin-top: 30px;
-    width: 200px;
-    height: 55px;
-    border: 1px solid color:#119F9F;
+    margin-block: 30px;
+    padding: 14px 50px;
+    border: 0;
     border-radius: 30px;
-    background-color: #119F9F;
+    background-color: #C83C00;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+button:active {
+    background-color: #9c1a00;
 }
