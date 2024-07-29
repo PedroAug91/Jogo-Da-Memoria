@@ -24,15 +24,19 @@ h1 {
 }
 
 .card{
+    border: 0;
     border-radius: 10px;
     margin: auto;
     padding: 20px;
-    background-color: #C83C00;
-    width: 136px;
-    min-height: 200px;
+    width: 156px;
+    min-height: 220px;
 }
 
-button{
+.flipped {
+    background-color: #C83C00;
+}
+
+.btn-restart{
     float: left;
     margin-block: 30px;
     padding: 14px 50px;
@@ -45,6 +49,6 @@ button{
     font-family: 'Roboto', sans-serif;
 }
 
-button:active {
+.btn-restart:active {
     background-color: #9c1a00;
 }
