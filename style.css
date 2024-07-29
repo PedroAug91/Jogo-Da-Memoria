@@ -31,15 +31,11 @@ h1 {
     width: 156px;
     height: 220px;
     background-size: cover;
-    transform: rotateY(180deg);
-    
-
+    background-position: center;
 }
-
 
 .flipped {
     background-color: #C83C00;
-    transform: rotateY(180deg);
 }
 
 .btn-restart{
