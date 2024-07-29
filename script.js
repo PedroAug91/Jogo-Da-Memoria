@@ -10,8 +10,9 @@ const imgs = [
     "url('./imgs/ryan-2.jpg')",
     "url('./imgs/ryan-3.jpg')",
     "url('./imgs/ryan-4.jpg')",
-    "url('./imgs/ryan-5.jpg')",
+    "url('./imgs/ryan-5.jpg')"
 ];
+
 
 
 function flipCard(id, index) {
@@ -34,6 +35,15 @@ function createBoard() {
     }
 }
 
+function shuffle() {
+    for (let i = imgs.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
+    }
+    createBoard(); 
+}
+
+
 function resetCards() {
     for(let i = 1; i <= 10; i++) {
         let button = document.getElementById(i)
@@ -44,3 +54,4 @@ function resetCards() {
 
 
 createBoard()
+shuffle()
