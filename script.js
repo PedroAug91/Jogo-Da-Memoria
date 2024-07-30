@@ -1,4 +1,6 @@
 var gameBoard = document.getElementById("game-board")
+var match = []
+var wait = false
 
 const imgs = [
     "url('./imgs/ryan-1.jpg')",
@@ -14,13 +16,39 @@ const imgs = [
 ];
 
 
+function checkForMatch(id) {
+    buttonA = document.getElementById(match[0])
+    buttonB = document.getElementById(id)
+
+    if (buttonA.style.backgroundImage === buttonB.style.backgroundImage) {
+        correctGuesses++
+    } else {
+        unflip(buttonA, buttonB)
+    }
+
+    match.shift()
+}
 
 function flipCard(id, index) {
+    if (wait) {
+        wait = false
+        return null
+    }
     let button = document.getElementById(id)
     button.classList.remove("flipped")
+
     button.style.transform = "rotatey(180deg)"
     button.style.transition = "transform 1s"
     button.style.backgroundImage = imgs[index - 1];
+
+    button.setAttribute("disabled", "true")
+
+    if (match.length < 1) {
+        match.push(id)
+    } else {
+        wait = true
+        setTimeout(checkForMatch, 1000, id)
+    }
 }
 
 function shuffle() {
@@ -37,11 +65,12 @@ function createBoard() {
         button.classList.add("card", "flipped")
         button.id = i
         button.type = "button"
+
         button.addEventListener('click', function() {
-            flipCard(this.id, i); // Envie o ID do botão como parâmetro
+            flipCard(this.id, i);
         })
+
         gameBoard.appendChild(button)
-        shuffle()
     }
 }
 
@@ -52,6 +81,7 @@ function resetCards() {
         button.classList.add("flipped")
         button.style.transform = ""
         button.style.backgroundImage = ""
+        button.removeAttribute("disabled")
     }
     shuffle()
 }
