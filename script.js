@@ -16,7 +16,6 @@ const imgs = [
     "url('./imgs/ryan-5.jpg')"
 ];
 
-
 function checkForMatch(id) {
     buttonA = document.getElementById(match[0])
     buttonB = document.getElementById(id)
@@ -24,7 +23,7 @@ function checkForMatch(id) {
     if (buttonA.style.backgroundImage === buttonB.style.backgroundImage) {
         correctGuesses++
     } else {
-        unflip(buttonA, buttonB)
+        // Desvirar aqui
     }
 
     match.shift()
