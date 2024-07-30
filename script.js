@@ -1,5 +1,6 @@
 var gameBoard = document.getElementById("game-board")
 var match = []
+var correctGuesses = 0
 var wait = false
 
 const imgs = [
