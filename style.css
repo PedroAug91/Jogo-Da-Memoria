@@ -19,7 +19,7 @@ h1 {
     grid-template-columns: repeat(5, 1fr);
     padding-inline: 80px;
     padding-block: 30px;
-    background-color: #DECC8A;
+    background-color: #ffabab;
     border-radius: 10px;
 }
 
@@ -36,7 +36,7 @@ h1 {
 }
 
 .flipped {
-    background-color: #C83C00;
+    background-color: #ff0062;
 }
 
 .btn-restart{
@@ -45,7 +45,7 @@ h1 {
     padding: 14px 50px;
     border: 0;
     border-radius: 30px;
-    background-color: #C83C00;
+    background-color: #ff0062;
     font-size: 24px;
     font-weight: 600;
     color: #FFFFFF;
@@ -53,5 +53,32 @@ h1 {
 }
 
 .btn-restart:active {
-    background-color: #9c1a00;
+    background-color: #ad0031;
+}
+
+#won {
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    max-width: 900px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20%;
+    margin-inline: auto;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+#won img {
+    max-width: 50%;
+    border-radius: 10px;
+}
+
+#won button {
+    max-width: fit-content;
+}
+
+#won h1 {
+    max-width: 80%;
 }

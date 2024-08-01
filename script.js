@@ -53,19 +53,11 @@ function checkForMatch(id) {
     }
 
     if (correctGuesses === imgs.length / 2) {
-        setTimeout(() => {
-            resetGame(); 
-        }, 1000); 
+        document.getElementById("won").style.display = "flex"
     }
-     else {
-        setTimeout(() => {
-            unflipCards(buttonA, buttonB);
-    }, 1000); 
 
-}
-
-match.shift();
-wait = false;
+    match.shift();
+    wait = false;
     match.shift()
 }
 
@@ -126,6 +118,7 @@ function resetCards() {
 }
 
 function resetGame() {
+    document.getElementById("won").style.display = "none"
     resetCards();
     correctGuesses = 0;
     match = [];
