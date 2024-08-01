@@ -9,11 +9,21 @@ const imgs = [
     "url('./imgs/ryan-3.jpg')",
     "url('./imgs/ryan-4.jpg')",
     "url('./imgs/ryan-5.jpg')",
+    "url('./imgs/ryan-6.jpg')",
+    "url('./imgs/ryan-7.jpg')",
+    "url('./imgs/ryan-8.jpg')",
+    "url('./imgs/ryan-9.jpg')",
+    "url('./imgs/ryan-10.jpg')",
     "url('./imgs/ryan-1.jpg')",
     "url('./imgs/ryan-2.jpg')",
     "url('./imgs/ryan-3.jpg')",
     "url('./imgs/ryan-4.jpg')",
-    "url('./imgs/ryan-5.jpg')"
+    "url('./imgs/ryan-5.jpg')",
+    "url('./imgs/ryan-6.jpg')",
+    "url('./imgs/ryan-7.jpg')",
+    "url('./imgs/ryan-8.jpg')",
+    "url('./imgs/ryan-9.jpg')",
+    "url('./imgs/ryan-10.jpg')"
 ];
 
 function checkForMatch(id) {
@@ -86,7 +96,7 @@ function shuffle() {
 
 function createBoard() {
     shuffle()
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 20; i++) {
         let button = document.createElement("button")
         button.classList.add("card", "flipped")
         button.id = i
@@ -101,7 +111,7 @@ function createBoard() {
 }
 
 function resetCards() {
-    for(let i = 1; i <= 10; i++) {
+    for(let i = 1; i <= 20; i++) {
         let button = document.getElementById(i)
         button.classList.add("flipped")
         button.style.transform = ""
