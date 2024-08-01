@@ -26,6 +26,19 @@ const imgs = [
     "url('./imgs/ryan-10.jpg')"
 ];
 
+function unflipCards(buttonA, buttonB) {
+    buttonA.classList.add("flipped");
+    buttonB.classList.add("flipped");
+    buttonA.style.transform = 'rotateY(0deg)';
+    buttonB.style.transform = 'rotateY(0deg)';
+    buttonA.style.transition = "transform 1s";
+    buttonB.style.transition = "transform 1s";
+    buttonA.style.backgroundImage = ""; 
+    buttonB.style.backgroundImage = ""; 
+    buttonA.removeAttribute("disabled"); 
+    buttonB.removeAttribute("disabled"); 
+}
+
 function checkForMatch(id) {
     buttonA = document.getElementById(match[0])
     buttonB = document.getElementById(id)
@@ -35,16 +48,7 @@ function checkForMatch(id) {
     } 
     else {
         setTimeout(() => {
-            buttonA.classList.add("flipped");
-            buttonB.classList.add("flipped");
-            buttonA.style.transform = 'rotateY(0deg)';
-            buttonB.style.transform = 'rotateY(0deg)';
-            buttonA.style.transition = "transform 1s";
-            buttonB.style.transition = "transform 1s";
-            buttonA.style.backgroundImage = ""; 
-            buttonB.style.backgroundImage = ""; 
-            buttonA.removeAttribute("disabled"); 
-            buttonB.removeAttribute("disabled"); 
+            unflipCards(buttonA, buttonB);
         }, 100); 
     }
 
