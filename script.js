@@ -22,10 +22,36 @@ function checkForMatch(id) {
 
     if (buttonA.style.backgroundImage === buttonB.style.backgroundImage) {
         correctGuesses++
-    } else {
-        // Desvirar aqui
+    } 
+    else {
+        setTimeout(() => {
+            buttonA.classList.add("flipped");
+            buttonB.classList.add("flipped");
+            buttonA.style.transform = 'rotateY(0deg)';
+            buttonB.style.transform = 'rotateY(0deg)';
+            buttonA.style.transition = "transform 1s";
+            buttonB.style.transition = "transform 1s";
+            buttonA.style.backgroundImage = ""; 
+            buttonB.style.backgroundImage = ""; 
+            buttonA.removeAttribute("disabled"); 
+            buttonB.removeAttribute("disabled"); 
+        }, 100); 
     }
 
+    if (correctGuesses === imgs.length / 2) {
+        setTimeout(() => {
+            resetGame(); 
+        }, 1000); 
+    }
+     else {
+        setTimeout(() => {
+            unflipCards(buttonA, buttonB);
+    }, 1000); 
+
+}
+
+match.shift();
+wait = false;
     match.shift()
 }
 
@@ -74,7 +100,6 @@ function createBoard() {
     }
 }
 
-
 function resetCards() {
     for(let i = 1; i <= 10; i++) {
         let button = document.getElementById(i)
@@ -86,5 +111,11 @@ function resetCards() {
     shuffle()
 }
 
+function resetGame() {
+    resetCards();
+    correctGuesses = 0;
+    match = [];
+    wait = false;
+}
 
 createBoard()
